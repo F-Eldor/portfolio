@@ -1,107 +1,196 @@
-html,*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
 }
-body{
-    background-color: rgb(7, 0, 0);
-    color: aliceblue;
-    font-family:'Poppins', sans-serif;
-    max-width: 1440px;
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #121212;  /* Dark background for contrast */
+    color: #f1f1f1;  /* Light text for readability */
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 10%;
+    background-color: transparent;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    z-index: 100;
 }
-header{
-    width: 1440px;
-    
-    display: flex;
-    justify-content: center;
-}
-h1{
-    
+
+/* Logo */
+.logo {
     font-size: 3rem;
     color: #b74b4b;
     font-weight: 800;
     cursor: pointer;
     transition: 0.5s ease;
 }
-.cards{
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    border: 5px solid #b74b4b;
-    border-radius: 20px;
-    margin: 10px;
-    margin-top: 50px;
+
+.logo:hover {
+    transform: scale(1.1);
 }
-.card{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-}
-button{
-    display: inline-block;
-    padding: 7px 7px;
-    background-color: black;
-    border-radius: 4rem;
-    font-size: 0.8rem;
-    color: #b74b4b;
-    letter-spacing: 0.3rem;
-    font-weight: 600;
-    border: 2px solid #b74b4b;
+
+/* Navigation */
+nav a {
+    font-size: 1.8rem;
+    color: #f1f1f1;
+    margin-left: 3rem;
+    font-weight: 500;
     transition: 0.3s ease;
-    cursor: pointer;
-    margin: 12px;
+    padding-bottom: 0.5rem;
+    position: relative;
 }
-button:hover{
-    transform: scale3d(1.03);
-    background-color: #b74b4b;
-    color: black;
-    box-shadow: 0 0 25px #b74b4b;
-}
-h2{
-    font-size: 1.7rem;
+
+nav a:hover,
+nav a.active {
     color: #b74b4b;
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.5s ease; 
-}
-h3{
-    font-size: 1.2rem;
-    color: #b74b4b;
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.5s ease; 
-    margin-top: 15px;
-}
-p{
-    width: 450px;
-    padding: 10px;
-}
-.knowledge{
-    margin-right: 200px;
 }
 
-.learning {
-    align-self: flex-start;
-    margin-left: 20px; 
-    margin-top: 100px;
-}
-
-
-.father {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
- }
- a{
+    height: 3px;
+    background-color: #b74b4b;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Skills Section */
+.skills {
+    padding: 8rem 10% 6rem;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    color: #b74b4b;
+}
+
+/* Cards Container */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;  /* Increased spacing between cards */
+    justify-content: center;
+}
+
+/* Individual Skill Card */
+.card {
+    background-color: #1a1a1a;
+    padding: 3rem;  /* More padding for better spacing */
+    border-radius: 1.5rem;  /* More rounded corners */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease-in-out;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 2.8rem;  /* Bigger title */
+    color: #b74b4b;
+    margin-bottom: 1.5rem; /* Spacing below title */
+}
+
+.card p {
+    font-size: 1.6rem;
+    color: #ccc;
+    margin-bottom: 2.5rem;  /* More space between text and button */
+}
+
+.card button {
+    padding: 1.2rem 2.5rem;
     font-size: 1.5rem;
-    padding: 2rem;
- }
+    color: #fff;
+    background-color: #b74b4b;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;  /* Added margin to separate button */
+}
+
+.card button:hover {
+    background-color: #9e3e3e;
+}
+
+/* Hover Effects */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem; /* Adjusted spacing */
+    }
+}
+
+@media (max-width: 800px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 2.5rem;  /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    nav {
+        font-size: 1.6rem;
+    }
+
+    .skills {
+        padding: 6rem 5%;
+    }
+
+    .skills h2 {
+        font-size: 2.8rem;
+    }
+
+    .card {
+        padding: 2rem;
+    }
+
+    .card button {
+        font-size: 1.2rem;
+    }
+}

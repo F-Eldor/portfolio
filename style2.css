@@ -1,25 +1,105 @@
-html,*{
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body{
-    max-width: 1440px;
-    display: flex;
-    background-color: #051839;
-    color: white;
+    text-decoration: none;
+    border: none;
+    outline: none;
     font-family: 'Poppins', sans-serif;
-    flex-direction: column;
-    align-items: center;
 }
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
 header{
-    width: 1440px;
-    padding: 20px;
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a.active{
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #b74b4b;
+        border-bottom: 3px solid #b74b4b;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #b74b4b;
+    }
 }
 .projects{
-    margin-top: 30px;
+    margin-top: 100px;
     display: flex;
     width: 1200px;
     justify-content: space-around;
@@ -78,4 +158,197 @@ button:hover{
     box-shadow: 1px 1px 30px rgb(97, 107, 164);
     transform: scale(1.1);
     transition: 0.4s;
+}
+
+ */
+
+
+
+
+
+
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #121212 ;
+    color: #cdd6f4;
+}
+
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 10%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Logo */
+.logo {
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation */
+nav a {
+    font-size: 1.8rem;
+    color: #f1f1f1;
+    margin-left: 3rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    padding-bottom: 0.5rem;
+    position: relative;
+}
+
+nav a:hover,
+nav a.active {
+    color: #b74b4b;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #b74b4b;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #b74b4b;
+        border-bottom: 3px solid #b74b4b;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #b74b4b;
+    }
+}
+
+
+h1{
+    font-size: 35px;
+}
+
+.projects{
+    margin-top: 200px;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 70px;
+}
+.project-card {
+    background-color: #1a1a1a;
+    padding: 3rem;  /* More padding for better spacing */
+    border-radius: 1.5rem;  /* More rounded corners */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease-in-out;
+    text-align: center;
+}
+
+img{
+    margin-bottom: 7px;
+    width: 170px;
+}
+h2{
+    padding-bottom: 7px;
+    font-weight: 800;
+    font-size: 22px;
+
+}
+p{
+    font-weight: bold;
+    padding-bottom: 7px;
+    font-size: 15px;
+}
+.project-card > a{
+    color: white;
+    font-size: 12px;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.project-card button {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #b74b4b;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;  /* Added margin to separate button */
+}
+
+.project-card button:hover {
+    background-color: #9e3e3e;
+}
+.project-card button a{
+    text-decoration: none;
+    color: #cdd6f4;
 }
